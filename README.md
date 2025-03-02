@@ -32,8 +32,8 @@ This project, part of ["Let's Do Activity" (Session 3)](https://www.eepw.com.cn/
 - **Servo Motor**: SG90 Micro Servo (180° rotation)  
 - **Control Interface**: Dual-button module  
 
-![Hardware Assembly](/upload/hardware_assembly.jpg)  
-![Hardware Assembly](/upload/hardware_assembly2.jpg)  
+![Hardware Assembly](https://minkai-shi.github.io/upload/hardware_assembly.jpg) 
+![Hardware Assembly](https://minkai-shi.github.io/upload/hardware_assembly2.jpg)  
 *Final prototype with labeled components*
 
 ---
