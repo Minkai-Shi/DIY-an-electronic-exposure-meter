@@ -127,8 +127,9 @@ SHUTTER_VALUES = ["1", "1/2", "1/4", "1/8", "1/15", "1/30", "1/60"]
 ## Project Links
 - **Full Source Code**: [GitHub Repository](https://github.com/Minkai-Shi/DIY-an-electronic-exposure-meter)  
 - **EEPW Forum Posts**:  
-  - [Award Announcement](https://forum.eepw.com.cn/thread/388126/1)  
-  - [Technical Documentation](https://forum.eepw.com.cn/thread/388125/1)  
+  - [Unboxing Announcement](https://forum.eepw.com.cn/thread/388122/1) 
+  - [Award Announcement](https://forum.eepw.com.cn/thread/388123/1)  
+  - [Technical Documentation](https://forum.eepw.com.cn/thread/388125/1)
 - **Demo Video**: [YouTube](https://youtu.be/DJd1A43Qwbo)  
 
 ---
