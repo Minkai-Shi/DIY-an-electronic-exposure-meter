@@ -16,9 +16,8 @@ This project, part of ["Let's Do Activity" (Session 3)](https://www.eepw.com.cn/
 2. [System Architecture](#system-architecture)  
 3. [Software Implementation](#software-implementation)  
 4. [Exposure Control Logic](#exposure-control-logic)  
-5. [Performance & Applications](#performance--applications)  
-6. [Technical Innovations](#technical-innovations)  
-7. [Project Links](#project-links)  
+5. [Technical Innovations](#technical-innovations)  
+6. [Project Links](#project-links)  
 
 ---
 
@@ -46,7 +45,13 @@ This project, part of ["Let's Do Activity" (Session 3)](https://www.eepw.com.cn/
 | Servo Motor    | GPIO10                  | PWM       |
 | Red Button     | GPIO9                   | Digital   |
 | Blue Button    | GPIO6                   | Digital   |
-
+### Key Challenges & Solutions
+1. **Debugging of Remote Control Methods**  
+   - When the mobile phone can be used for control, Bluetooth or MQTT methods are planned to be adopted. However, the official manual of this version of the firmware does not support Bluetooth, and there is too little reference information for MQTT setup on io.adafruit. Later, the code for controlling WS2812B via the network found on the Internet was referenced and modified.
+   -The WiFi control part exchanges data with the web page through WebSocket. The websocket.send_message function transmits the measured and calculated data such as light intensity to the web page for display. The websocket.receive function receives the instructions from the buttons on the web page and calls the mode switching, parameter adjustment, and shooting functions respectively to realize the mobile phone remote control function.Enter http://192.168.66.121:1080/client in the browser of a computer or mobile phone to access the control website. Replace the IP address with the IP address output by the console.
+2. **Selection of Exposure Parameter Calculation Method**  
+   -Direct calculation requires multiple mathematical operations, which slows down the processing speed and affects the shooting effect. When using exposure calculation formulas that involve complex mathematical operations such as logarithms and exponents, the code complexity is high.
+   -The lookup table method is chosen for calculation. Looking up a table only requires directly finding the corresponding output value based on the input value, avoiding complex mathematical operations. Therefore, the calculation speed is very fast, which is especially suitable for applications with high real-time requirements. In embedded systems, due to limited resources, simple lookup table code is easier to implement and debug.
 ---
 
 ## Software Implementation
@@ -85,13 +90,6 @@ SHUTTER_VALUES = ["1", "1/2", "1/4", "1/8", "1/15", "1/30", "1/60"]
 
 ---
 
-## Performance & Applications
-### Key Metrics
-| Parameter        | Value       | Measurement Method       |
-|------------------|-------------|--------------------------|
-| Accuracy         | ±1.8%       | Sekonic L-308X reference |
-| Response Time    | 120ms       | High-speed camera        |
-| Power Consumption| 18mA @3.3V  | Digital multimeter       |
 
 ### Demo Video
 [![Demo](https://img.youtube.com/vi/znmnvBf8Q34/0.jpg)](https://youtu.be/znmnvBf8Q34)
