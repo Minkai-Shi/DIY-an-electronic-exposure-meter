@@ -47,14 +47,6 @@ This project, part of ["Let's Do Activity" (Session 3)](https://www.eepw.com.cn/
 | Red Button     | GPIO9                   | Digital   |
 | Blue Button    | GPIO6                   | Digital   |
 
-### Key Challenges & Solutions
-1. **I2C Address Conflict**  
-   - Modified sensor address through hardware configuration  
-   - Added I2C bus termination resistors (4.7kΩ)  
-2. **Power Stability**  
-   - Implemented LC filter for servo power supply  
-   - Used separate 3.3V rail for sensors  
-
 ---
 
 ## Software Implementation
